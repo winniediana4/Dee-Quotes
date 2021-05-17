@@ -6,12 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  quotes:Quote[] = [
-    {id:1, name:''},
-    {id:2, name:''},
-    {id:3, name:''},
-    {id:4, name:''},
-    {id:5, name:''},
-    {id:6, name:''}
-  ];
+ quotes:string[];
+ constructor(){
+   this.quotes = ['A rose is a rose by any other name']
+ }
 }
