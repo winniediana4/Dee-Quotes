@@ -14,7 +14,7 @@ export class QuoteComponent implements OnInit {
     new Quotes(2, 'A rose is a rose by any other name', 'William Shakespeare'),
   ];
 
-  toggleDetails(index: string | number){
+  toggleDetails(index: number){
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
   }
 
