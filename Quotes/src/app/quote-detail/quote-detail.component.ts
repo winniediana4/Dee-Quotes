@@ -6,14 +6,18 @@ import { Quotes } from '../quotes';
   styleUrls: ['./quote-detail.component.css']
 })
 export class QuoteDetailComponent implements OnInit {
-
-  @Input()
-  quotes!: Quotes;
-  @Output() isComplete = new EventEmitter<boolean>();
-
-  quoteComplete(complete:boolean){
-    this.isComplete.emit(complete);
+  @Input() quotes!: Quotes;
+  @Output() isRead = new EventEmitter<boolean>();
+  deleteQuote(read:boolean){
+    this.isRead.emit(read);
   }
+  upvote(){
+    this.quotes.likes+=1;
+  }
+  downvote(){
+    this.quotes.dislikes+=1;
+  }
+  
   constructor() { }
 
   ngOnInit(): void {
