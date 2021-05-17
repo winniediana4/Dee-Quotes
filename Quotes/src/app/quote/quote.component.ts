@@ -1,3 +1,4 @@
+import { Quote } from '@angular/compiler';
 import { Component, OnInit, Input } from '@angular/core';
 import { Quotes } from '../quotes';
 
@@ -9,9 +10,19 @@ import { Quotes } from '../quotes';
 export class QuoteComponent implements OnInit {
 
   quotes:Quotes[] = [
-    {id:1, name: 'To be or not to be? That is the question'},
-    {id:2, name: 'A rose is a rose by any other name'},
+    new Quotes(1, 'To be or not to be? That is the question', 'William Shakespeare'),
+    new Quotes(2, 'A rose is a rose by any other name', 'William Shakespeare'),
   ];
+
+  toggleDetails(index: string | number){
+    this.quotes[index].showDescription = !this.quotes[index].showDescription;
+  }
+
+  completeQuotes(isComplete: any, index: number){
+    if (isComplete) {
+      this.quotes.splice(index,1);
+    }
+  }
 
   constructor() { }
 
