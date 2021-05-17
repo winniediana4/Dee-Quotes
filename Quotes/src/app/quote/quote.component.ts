@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Quotes } from '../quotes';
 
 @Component({
   selector: 'app-quote',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuoteComponent implements OnInit {
 
+  quotes:Quotes[] = [
+    {id:1, name: 'To be or not to be? That is the question'},
+    {id:2, name: 'A rose is a rose by any other name'},
+  ];
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(){
   }
 
 }

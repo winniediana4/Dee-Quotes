@@ -1,1 +1,10 @@
-<p>quote works!</p>
+<div>
+  <h1>Dee Quotes</h1>
+  <hr>
+  <ul>
+    <li *ngFor = 'let quote of quotes' >
+      {{quote.name}}
+    </li>
+  </ul>
+  <P *ngIf='quotes.length > 15'>Your quotes are too many</P>
+</div>
