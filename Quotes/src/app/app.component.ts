@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Quotes } from './quotes'
 
 @Component({
   selector: 'app-root',
@@ -6,8 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- quotes:string[];
- constructor(){
-   this.quotes = ['A rose is a rose by any other name']
- }
+ quotes:Quotes[] = [
+   {id:1, name: 'To be or not to be? That is the question'},
+   {id:2, name: 'A rose is a rose by any other name'},
+ ];
+ 
 }
